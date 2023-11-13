@@ -9,22 +9,35 @@ cache[6] = new Array();
 cache[7] = new Array();
 const memory = new Array();
 memory.push(new Object({block:0,value:2}));
-memory.push(new Object({block:8,value:3}));
+memory.push(new Object({block:0,value:3}));
+memory.push(new Object({block:0,value:2}));
+memory.push(new Object({block:0,value:3}));
+memory.push(new Object({block:0,value:2}));
+memory.push(new Object({block:0,value:3}));
+memory.push(new Object({block:0,value:2}));
+memory.push(new Object({block:0,value:3}));
+memory.push(new Object({block:8,value:2}));
+memory.push(new Object({block:9,value:3}));
+memory.push(new Object({block:10,value:2}));
+memory.push(new Object({block:11,value:3}));
+memory.push(new Object({block:12,value:2}));
+memory.push(new Object({block:13,value:3}));
 
 function start(){
     while(memory.length !=0){
-        curr = memory.shift;
+        curr = memory.shift();
         curr.age = 0
         set = curr.block%8;
-        if(cache[set].length<=4){
-            cache[set].forEach(e => {
-                e.age++;
-            });
-            cache[set].push(curr);
+        
+        index = cache[set].findIndex(e => e.value === curr.value);
+        if (index != -1){
+            cache[set][index].age = 0;
         }else{
-            index = cache[set].findindex(e => e.value === curr.value);
-            if (index != -1){
-                cache[set][index].age = 0;
+            if(cache[set].length<=4){
+                cache[set].forEach(e => {
+                    e.age++;
+                });
+                cache[set].push(curr);
             }else{
                 tempage = cache[set][0].age;
                 cache[set].forEach(e,i => {
@@ -35,6 +48,11 @@ function start(){
                 });
             }
         }
-        console.log(cache.toString());
+        // cache.forEach(e => {
+        //     e.forEach(block => {
+        //         console.log(block.age);
+        //     });
+        // });
+        console.log(JSON.stringify(cache));
     }
 }
