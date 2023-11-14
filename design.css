@@ -1,14 +1,21 @@
 body{
     background-color:rgba(36, 44, 77, 1);
+    color:white;
 }
 
 table{
     border: 1px solid white;
     border-collapse: collapse;
     text-align: center;
-    color: white;
 }
 
+.green{
+    background-color:green;
+}
+
+.red{
+    background-color: red;
+}
 
 .row {
     margin-left:-5px;
