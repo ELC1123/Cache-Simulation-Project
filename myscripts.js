@@ -49,11 +49,6 @@ function start(){
                 cache[set][index] = curr; 
             }
         }
-        // cache.forEach(e => {
-        //     e.forEach(block => {
-        //         console.log(block.age);
-        //     });
-        // });
         console.log(JSON.stringify(cache));
     }
 }
