@@ -1,0 +1,10 @@
+body{
+    background-color:rgba(36, 44, 77, 1);
+}
+
+#cache{
+    border: 1px solid white;
+    border-collapse: collapse;
+    text-align: center;
+    color: white;
+}
