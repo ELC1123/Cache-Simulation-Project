@@ -23,16 +23,16 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
     Set 6 will contain MM Blocks 6, 14, 22, and 30 
     Set 7 will contain MM Blocks 7, 15, 23, and 31 
     
-    |  Set  | Block 0 | Block 1 | Block 2 | Block 3 |
-    | ----- | ------- | ------- | ------- | ------- |
-    | Set 0 |    0    |    8    |    16    |    24    |
-    | Set 1 |    0    |    8    |    16    |    24    |
-    | Set 2 |    0    |    8    |    16    |    24    |
-    | Set 3 |    0    |    8    |    16    |    24    |
-    | Set 4 |    0    |    8    |    16    |    24    |
-    | Set 5 |    0    |    8    |    16    |    24    |
-    | Set 6 |    0    |    8    |    16    |    24    |
-    | Set 7 |    0    |    8    |    16    |    24    |
+|  Set  | Block 0 | Block 1 | Block 2 | Block 3 |
+| ----- | ------- | ------- | ------- | ------- |
+| Set 0 |    0    |    8    |    16    |    24    |
+| Set 1 |    0    |    8    |    16    |    24    |
+| Set 2 |    0    |    8    |    16    |    24    |
+| Set 3 |    0    |    8    |    16    |    24    |
+| Set 4 |    0    |    8    |    16    |    24    |
+| Set 5 |    0    |    8    |    16    |    24    |
+| Set 6 |    0    |    8    |    16    |    24    |
+| Set 7 |    0    |    8    |    16    |    24    |
 
     *Note that these numbers are listed in sequential order from Block 0, 1, 2, and 3 respectively for each set
 
