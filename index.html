@@ -81,7 +81,7 @@
             <div>
                 <table border = 1 class="column">
                     <tr>
-                        <th style="width: 50px;"> Time </th> <th id="time" style="width: 100px;"> 10000000 </th>
+                        <th style="width: 50px;"> Time </th> <th id="time" style="width: 100px;"> 0 </th>
                     </tr>
                 </table>
                 <input type="range" min="1" max="1000" value="50" id = "speed"oninput="this.nextElementSibling.value = this.value+'ms'">
@@ -92,6 +92,7 @@
         </div>
         
         <button onclick="start()">Start</button>
+        <button onclick="reset()" style="display: inline-block;">Start</button>
 
         <div id="final-snapshot" style="display: none;">
             <p> Final Snapshot </p>

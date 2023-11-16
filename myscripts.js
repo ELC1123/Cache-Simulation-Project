@@ -269,6 +269,29 @@ const memory = new Array();
 // memory.push(new Object({block:62,value:2}));
 // memory.push(new Object({block:63,value:2}));
 
+function init(){
+    const cache = new Array(8);
+    cache[0] = new Array();
+    cache[1] = new Array();
+    cache[2] = new Array();
+    cache[3] = new Array();
+    cache[4] = new Array();
+    cache[5] = new Array();
+    cache[6] = new Array();
+    cache[7] = new Array();
+    age = [0,0,0,0,0,0,0,0];
+    misscount = 0;
+    hitcount = 0;
+    time = 0;
+    memory = new Array();
+}
+
+function reset(){
+    init();
+    document.getElementById("input").style.display = "block";
+    document.getElementById("memory-sequence").style.display = "none";
+}
+
 async function start(){
     textlog = document.getElementById("memory-sequence").children[0];
     document.getElementById("input").style.display = "none";
@@ -350,10 +373,12 @@ function addtomemory(e){
             row = document.createElement("tr");
             col = document.createElement("td");
             col.innerHTML = "<input type='number' onkeydown='addtomemory(this)'>"
+            
             row.appendChild(col);
             parent = e.parentNode;
             parent.innerHTML = e.value;
             parent.parentNode.parentNode.appendChild(row);
+            col.children[0].focus();
             console.log("enter");
         }
     }
