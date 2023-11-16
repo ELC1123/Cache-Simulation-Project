@@ -11,7 +11,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
 `a.) Sequential sequence: up to 2n cache block. Repeat the sequence four times. Example: 0,1,2,3,...,2n-1 {4x}`
 
-    In this test case, we will be inputting 64 MM blocks into the cache, starting from 0 until 63. MM Blocks 0 to 31 will be mapped to their corresponding sets by calculating MM Block# % 8. This will result in a mapping pattern wherein:
+    ```In this test case, we will be inputting 64 MM blocks into the cache, starting from 0 until 63. MM Blocks 0 to 31 will be mapped to their corresponding sets by calculating MM Block# % 8. This will result in a mapping pattern wherein:```
     
     Set 0 will contain MM Blocks 0, 8, 16, and 24
     Set 1 will contain MM Blocks 1, 9, 17, and 25 
@@ -123,10 +123,8 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
     Set 7 will contain MM Blocks 39, 47, 55, and 63 
     *Note that these numbers are listed in sequential order from Block 0, 1, 2, and 3 respectively for each set
 
-    ```Then when we try to insert MM Blocks 40 to 63, they will all result in hits because they are all still in the cache. Thus, the snapshot above is the final snapshot of this test case.```
+    Then when we try to insert MM Blocks 40 to 63, they will all result in hits because they are all still in the cache. Thus, the snapshot above is the final snapshot of this test case.
     
-===============================================================================================================================================================================
-b.) Random sequence: containing 4n blocks.
+`b.) Random sequence: containing 4n blocks.`
 
-===============================================================================================================================================================================
-c.) Mid-repeat blocks: Start at block 0, repeat the sequence in the middle two times up to n-1 blocks, after which continue up to 2n. Then, repeat the sequence four times. Example: if n=8, sequence=0, 1,2,3,4,5,6, 1,2,3,4,5,6, 7,8,9,10,11,12,13,14,15 {4x}
+`c.) Mid-repeat blocks: Start at block 0, repeat the sequence in the middle two times up to n-1 blocks, after which continue up to 2n. Then, repeat the sequence four times. Example: if n=8, sequence=0, 1,2,3,4,5,6, 1,2,3,4,5,6, 7,8,9,10,11,12,13,14,15 {4x}`
