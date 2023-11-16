@@ -9,7 +9,7 @@ Type of cache memory: 4-way BSA + MRU
 Detailed analysis of test cases:
 Since our cache contains 32 blocks and the set size is 4 blocks per set, we have 32/4 = 8 sets.
 
-a.) Sequential sequence: up to 2n cache block. Repeat the sequence four times. Example: 0,1,2,3,...,2n-1 {4x}
+`a.) Sequential sequence: up to 2n cache block. Repeat the sequence four times. Example: 0,1,2,3,...,2n-1 {4x}`
 
     In this test case, we will be inputting 64 MM blocks into the cache, starting from 0 until 63. MM Blocks 0 to 31 will be mapped to their corresponding sets by calculating MM Block# % 8. This will result in a mapping pattern wherein:
     
@@ -123,7 +123,7 @@ a.) Sequential sequence: up to 2n cache block. Repeat the sequence four times. E
     Set 7 will contain MM Blocks 39, 47, 55, and 63 
     *Note that these numbers are listed in sequential order from Block 0, 1, 2, and 3 respectively for each set
 
-    Then when we try to insert MM Blocks 40 to 63, they will all result in hits because they are all still in the cache. Thus, the snapshot above is the final snapshot of this test case.
+    ```Then when we try to insert MM Blocks 40 to 63, they will all result in hits because they are all still in the cache. Thus, the snapshot above is the final snapshot of this test case.```
     
 ===============================================================================================================================================================================
 b.) Random sequence: containing 4n blocks.
