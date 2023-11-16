@@ -12,7 +12,7 @@ misscount = 0;
 hitcount = 0;
 time = 0;
 memory = new Array();
-cachebase;
+cachebase = "";
 
 function init(){
     cache = new Array(8);
@@ -31,6 +31,9 @@ function init(){
     memory = new Array();
 
 }
+function loaded(){
+    cachebase = document.getElementById("cache").innerHTML;
+}
 
 function reset(){
     init();
@@ -47,7 +50,7 @@ function reset(){
     textlog.innerHTML = "<tr>"+
                             "<th> Sequence </th> <th> Status </th> <th> Set </th> <th> Time </th>"+
                         "</tr>";
-    document.getElementById("cache").innerHTML = cachebase;
+    document.getElementById("cache").children[0].innerHTML = cachebase;
     finalsnap = document.getElementById("final-snapshot");
     finalsnap.style.display = "none";
     finalsnap.innerHTML= "";
@@ -57,7 +60,6 @@ function reset(){
 
 async function start(){
     document.getElementById("start").disabled = true;
-    cachebase = document.getElementById("cache").innerHTML;
     textlog = document.getElementById("memory-sequence").children[0];
     document.getElementById("input").style.display = "none";
     document.getElementById("memory-sequence").style.display = "block";
@@ -147,4 +149,23 @@ function addtomemory(e){
     }
     console.log("hi");
     console.log(JSON.stringify(memory));
+}
+
+function testone() {
+    reset();
+    memory=[{block:0},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:31},{block:32},{block:33},{block:34},{block:35},{block:36},{block:37},{block:38},{block:39},{block:40},{block:41},{block:42},{block:43},{block:44},{block:45},{block:46},{block:47},{block:48},{block:49},{block:50},{block:51},{block:52},{block:53},{block:54},{block:55},{block:56},{block:57},{block:58},{block:59},{block:60},{block:61},{block:62},{block:63},{block:0},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:31},{block:32},{block:33},{block:34},{block:35},{block:36},{block:37},{block:38},{block:39},{block:40},{block:41},{block:42},{block:43},{block:44},{block:45},{block:46},{block:47},{block:48},{block:49},{block:50},{block:51},{block:52},{block:53},{block:54},{block:55},{block:56},{block:57},{block:58},{block:59},{block:60},{block:61},{block:62},{block:63},{block:0},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:31},{block:32},{block:33},{block:34},{block:35},{block:36},{block:37},{block:38},{block:39},{block:40},{block:41},{block:42},{block:43},{block:44},{block:45},{block:46},{block:47},{block:48},{block:49},{block:50},{block:51},{block:52},{block:53},{block:54},{block:55},{block:56},{block:57},{block:58},{block:59},{block:60},{block:61},{block:62},{block:63},{block:0},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:31},{block:32},{block:33},{block:34},{block:35},{block:36},{block:37},{block:38},{block:39},{block:40},{block:41},{block:42},{block:43},{block:44},{block:45},{block:46},{block:47},{block:48},{block:49},{block:50},{block:51},{block:52},{block:53},{block:54},{block:55},{block:56},{block:57},{block:58},{block:59},{block:60},{block:61},{block:62},{block:63}]
+    start();
+}
+
+function testtwo(){
+    reset();
+    memory = [{block:0},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:31},{block:32},{block:33},{block:34},{block:35},{block:36},{block:37},{block:38},{block:39},{block:40},{block:41},{block:42},{block:43},{block:44},{block:45},{block:46},{block:47},{block:48},{block:49},{block:50},{block:51},{block:52},{block:53},{block:54},{block:55},{block:56},{block:57},{block:58},{block:59},{block:60},{block:61},{block:62},{block:63},{block:64},{block:65},{block:66},{block:67},{block:68},{block:69},{block:70},{block:71},{block:72},{block:73},{block:74},{block:75},{block:76},{block:77},{block:78},{block:79},{block:80},{block:81},{block:82},{block:83},{block:84},{block:85},{block:86},{block:87},{block:88},{block:89},{block:90},{block:91},{block:92},{block:93},{block:94},{block:95},{block:96},{block:97},{block:98},{block:99},{block:100},{block:101},{block:102},{block:103},{block:104},{block:105},{block:106},{block:107},{block:108},{block:109},{block:110},{block:111},{block:112},{block:113},{block:114},{block:115},{block:116},{block:117},{block:118},{block:119},{block:120},{block:121},{block:122},{block:123},{block:124},{block:125},{block:126},{block:127}];
+    memory = memory.map(value => ({ value, sort: Math.random() })).sort((a, b) => a.sort - b.sort).map(({ value }) => value);
+    start();
+}
+
+function testthree(){
+    reset();
+    memory=[{block:0},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:31},{block:32},{block:33},{block:34},{block:35},{block:36},{block:37},{block:38},{block:39},{block:40},{block:41},{block:42},{block:43},{block:44},{block:45},{block:46},{block:47},{block:48},{block:49},{block:50},{block:51},{block:52},{block:53},{block:54},{block:55},{block:56},{block:57},{block:58},{block:59},{block:60},{block:61},{block:62},{block:63},{block:0},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:31},{block:32},{block:33},{block:34},{block:35},{block:36},{block:37},{block:38},{block:39},{block:40},{block:41},{block:42},{block:43},{block:44},{block:45},{block:46},{block:47},{block:48},{block:49},{block:50},{block:51},{block:52},{block:53},{block:54},{block:55},{block:56},{block:57},{block:58},{block:59},{block:60},{block:61},{block:62},{block:63},{block:0},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:31},{block:32},{block:33},{block:34},{block:35},{block:36},{block:37},{block:38},{block:39},{block:40},{block:41},{block:42},{block:43},{block:44},{block:45},{block:46},{block:47},{block:48},{block:49},{block:50},{block:51},{block:52},{block:53},{block:54},{block:55},{block:56},{block:57},{block:58},{block:59},{block:60},{block:61},{block:62},{block:63},{block:0},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:1},{block:2},{block:3},{block:4},{block:5},{block:6},{block:7},{block:8},{block:9},{block:10},{block:11},{block:12},{block:13},{block:14},{block:15},{block:16},{block:17},{block:18},{block:19},{block:20},{block:21},{block:22},{block:23},{block:24},{block:25},{block:26},{block:27},{block:28},{block:29},{block:30},{block:31},{block:32},{block:33},{block:34},{block:35},{block:36},{block:37},{block:38},{block:39},{block:40},{block:41},{block:42},{block:43},{block:44},{block:45},{block:46},{block:47},{block:48},{block:49},{block:50},{block:51},{block:52},{block:53},{block:54},{block:55},{block:56},{block:57},{block:58},{block:59},{block:60},{block:61},{block:62},{block:63}];
+    start();
 }

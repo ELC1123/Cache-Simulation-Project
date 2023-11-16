@@ -3,7 +3,7 @@
         <script src="myscripts.js"></script>
         <link rel="stylesheet" type="text/css" media="all" href="design.css">
     </head>
-    <body>
+    <body onload="loaded()">
         <div class = "row">
             <table border = 1 id="cache" class="column">
                 <tr>
@@ -78,24 +78,33 @@
                 </table>
             </div>
 
-            <div>
-                <table border = 1 class="column">
+            <div class="column">
+                <table border = 1 >
                     <tr>
                         <th style="width: 50px;"> Time </th> <th id="time" style="width: 100px;"> 0 </th>
                     </tr>
                 </table>
-                <input type="range" min="1" max="1000" value="50" id = "speed" oninput="this.nextElementSibling.value = this.value+'ms'">
+                <input type="range" min="0" max="1000" value="50" id = "speed" oninput="this.nextElementSibling.value = this.value+'ms'">
                 <output>50ms</output>
+                <div>
+                    <button onclick="start()" id = "start">Start</button>
+                    <button onclick="reset()" style="display: inline-block;">Reset</button>
+                </div>
+                <div>
+                    <button onclick="testone()">Sample Test Case 1</button>
+                    <button onclick="testtwo()">Sample Test Case 2</button>
+                    <button onclick="testthree()">Sample Test Case 3</button>
+                </div>
+                <div id="final-snapshot" style="display: none;">
+                </div>
             </div>
             
             
         </div>
         
-        <button onclick="start()" id = "start">Start</button>
-        <button onclick="reset()" style="display: inline-block;">Reset</button>
+        
 
-        <div id="final-snapshot" style="display: none;">
-        </div>
+        
 
     </body>
 </html>
