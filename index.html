@@ -59,16 +59,41 @@
                 </tr>
             </table>
 
-            <div id="memory-sequence">
-                <table border = 1 class="column">
-                    <th> Sequence </th> <th> Status </th> <th> Set </th> <th> Time </th>
+            <div id="input" >
+                <table border = 1 class="column" >
                     <tr>
-                        <td> Test </td> <td class="red"> </td> <td> </td> <td> </td>
+                        <th> Block </th>
+                    </tr>
+                    <tr>
+                        <td> <input type='number' onkeydown='addtomemory(this)'> </td>
                     </tr>
                 </table>
             </div>
+
+            <div id="memory-sequence" style="display: none;">
+                <table border = 1 class="column">
+                    <tr>
+                        <th> Sequence </th> <th> Status </th> <th> Set </th> <th> Time </th>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <table border = 1 class="column">
+                    <tr>
+                        <th style="width: 50px;"> Time </th> <th id="time" style="width: 100px;"> 10000000 </th>
+                    </tr>
+                </table>
+                <input type="range" min="1" max="1000" value="50" id = "speed"oninput="this.nextElementSibling.value = this.value+'ms'">
+                <output>50ms</output>
+            </div>
             
-        </div id="final-snapshot">
+            
+        </div>
+        
+        <button onclick="start()">Start</button>
+
+        <div id="final-snapshot">
             <p> Final Snapshot </p>
             <p> Access Count: </p>
             <p> Hits: </p>
@@ -77,9 +102,7 @@
             <p> Total Memory Access Time: </p>
             <p> Hit Rate: </p>
             <p> Miss Rate: </p>
-        <div>
-
         </div>
-        <button onclick="start()"></button>
+
     </body>
 </html>

@@ -1,6 +1,11 @@
-body{
+body,input{
     background-color:rgba(36, 44, 77, 1);
     color:white;
+}
+
+input{
+    border: none;
+    border-color: transparent;
 }
 
 table{
