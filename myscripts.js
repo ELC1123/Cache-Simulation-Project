@@ -8,6 +8,8 @@ cache[5] = new Array();
 cache[6] = new Array();
 cache[7] = new Array();
 const age = [0,0,0,0,0,0,0,0];
+const misscount = 0;
+const hitcount = 0;
 const memory = new Array();
 memory.push(new Object({block:0,value:2}));
 memory.push(new Object({block:1,value:2}));
@@ -277,6 +279,7 @@ async function start(){
         index = cache[set].findIndex(e => e.block === curr.block);
         if (index != -1){
             cache[set][index].age = curr.age;
+            hitcount++;
         }else{
             if(cache[set].length<4){
                 cache[set].push(curr);
@@ -295,6 +298,7 @@ async function start(){
                 document.getElementById("cache").children[0].children[set*2+1].children[index+1].innerHTML = curr.block;
                 document.getElementById("cache").children[0].children[set*2+2].children[index+1].innerHTML = curr.age;
             }
+            misscount++;
         }
         await sleep(50); 
         console.log(JSON.stringify(cache));
