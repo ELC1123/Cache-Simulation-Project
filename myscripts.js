@@ -1,4 +1,4 @@
-const cache = new Array(8);
+cache = new Array(8);
 cache[0] = new Array();
 cache[1] = new Array();
 cache[2] = new Array();
@@ -7,270 +7,15 @@ cache[4] = new Array();
 cache[5] = new Array();
 cache[6] = new Array();
 cache[7] = new Array();
-const age = [0,0,0,0,0,0,0,0];
+age = [0,0,0,0,0,0,0,0];
 misscount = 0;
 hitcount = 0;
 time = 0;
-const memory = new Array();
-// memory.push(new Object({block:0,value:2}));
-// memory.push(new Object({block:1,value:2}));
-// memory.push(new Object({block:2,value:2}));
-// memory.push(new Object({block:3,value:2}));
-// memory.push(new Object({block:4,value:2}));
-// memory.push(new Object({block:5,value:2}));
-// memory.push(new Object({block:6,value:2}));
-// memory.push(new Object({block:7,value:2}));
-// memory.push(new Object({block:8,value:2}));
-// memory.push(new Object({block:9,value:2}));
-// memory.push(new Object({block:10,value:2}));
-// memory.push(new Object({block:11,value:2}));
-// memory.push(new Object({block:12,value:2}));
-// memory.push(new Object({block:13,value:2}));
-// memory.push(new Object({block:14,value:2}));
-// memory.push(new Object({block:15,value:2}));
-// memory.push(new Object({block:16,value:2}));
-// memory.push(new Object({block:17,value:2}));
-// memory.push(new Object({block:18,value:2}));
-// memory.push(new Object({block:19,value:2}));
-// memory.push(new Object({block:20,value:2}));
-// memory.push(new Object({block:21,value:2}));
-// memory.push(new Object({block:22,value:2}));
-// memory.push(new Object({block:23,value:2}));
-// memory.push(new Object({block:24,value:2}));
-// memory.push(new Object({block:25,value:2}));
-// memory.push(new Object({block:26,value:2}));
-// memory.push(new Object({block:27,value:2}));
-// memory.push(new Object({block:28,value:2}));
-// memory.push(new Object({block:29,value:2}));
-// memory.push(new Object({block:30,value:2}));
-// memory.push(new Object({block:31,value:2}));
-// memory.push(new Object({block:32,value:2}));
-// memory.push(new Object({block:33,value:2}));
-// memory.push(new Object({block:34,value:2}));
-// memory.push(new Object({block:35,value:2}));
-// memory.push(new Object({block:36,value:2}));
-// memory.push(new Object({block:37,value:2}));
-// memory.push(new Object({block:38,value:2}));
-// memory.push(new Object({block:39,value:2}));
-// memory.push(new Object({block:40,value:2}));
-// memory.push(new Object({block:41,value:2}));
-// memory.push(new Object({block:42,value:2}));
-// memory.push(new Object({block:43,value:2}));
-// memory.push(new Object({block:44,value:2}));
-// memory.push(new Object({block:45,value:2}));
-// memory.push(new Object({block:46,value:2}));
-// memory.push(new Object({block:47,value:2}));
-// memory.push(new Object({block:48,value:2}));
-// memory.push(new Object({block:49,value:2}));
-// memory.push(new Object({block:50,value:2}));
-// memory.push(new Object({block:51,value:2}));
-// memory.push(new Object({block:52,value:2}));
-// memory.push(new Object({block:53,value:2}));
-// memory.push(new Object({block:54,value:2}));
-// memory.push(new Object({block:55,value:2}));
-// memory.push(new Object({block:56,value:2}));
-// memory.push(new Object({block:57,value:2}));
-// memory.push(new Object({block:58,value:2}));
-// memory.push(new Object({block:59,value:2}));
-// memory.push(new Object({block:60,value:2}));
-// memory.push(new Object({block:61,value:2}));
-// memory.push(new Object({block:62,value:2}));
-// memory.push(new Object({block:63,value:2}));
-// memory.push(new Object({block:0,value:2}));
-// memory.push(new Object({block:1,value:2}));
-// memory.push(new Object({block:2,value:2}));
-// memory.push(new Object({block:3,value:2}));
-// memory.push(new Object({block:4,value:2}));
-// memory.push(new Object({block:5,value:2}));
-// memory.push(new Object({block:6,value:2}));
-// memory.push(new Object({block:7,value:2}));
-// memory.push(new Object({block:8,value:2}));
-// memory.push(new Object({block:9,value:2}));
-// memory.push(new Object({block:10,value:2}));
-// memory.push(new Object({block:11,value:2}));
-// memory.push(new Object({block:12,value:2}));
-// memory.push(new Object({block:13,value:2}));
-// memory.push(new Object({block:14,value:2}));
-// memory.push(new Object({block:15,value:2}));
-// memory.push(new Object({block:16,value:2}));
-// memory.push(new Object({block:17,value:2}));
-// memory.push(new Object({block:18,value:2}));
-// memory.push(new Object({block:19,value:2}));
-// memory.push(new Object({block:20,value:2}));
-// memory.push(new Object({block:21,value:2}));
-// memory.push(new Object({block:22,value:2}));
-// memory.push(new Object({block:23,value:2}));
-// memory.push(new Object({block:24,value:2}));
-// memory.push(new Object({block:25,value:2}));
-// memory.push(new Object({block:26,value:2}));
-// memory.push(new Object({block:27,value:2}));
-// memory.push(new Object({block:28,value:2}));
-// memory.push(new Object({block:29,value:2}));
-// memory.push(new Object({block:30,value:2}));
-// memory.push(new Object({block:31,value:2}));
-// memory.push(new Object({block:32,value:2}));
-// memory.push(new Object({block:33,value:2}));
-// memory.push(new Object({block:34,value:2}));
-// memory.push(new Object({block:35,value:2}));
-// memory.push(new Object({block:36,value:2}));
-// memory.push(new Object({block:37,value:2}));
-// memory.push(new Object({block:38,value:2}));
-// memory.push(new Object({block:39,value:2}));
-// memory.push(new Object({block:40,value:2}));
-// memory.push(new Object({block:41,value:2}));
-// memory.push(new Object({block:42,value:2}));
-// memory.push(new Object({block:43,value:2}));
-// memory.push(new Object({block:44,value:2}));
-// memory.push(new Object({block:45,value:2}));
-// memory.push(new Object({block:46,value:2}));
-// memory.push(new Object({block:47,value:2}));
-// memory.push(new Object({block:48,value:2}));
-// memory.push(new Object({block:49,value:2}));
-// memory.push(new Object({block:50,value:2}));
-// memory.push(new Object({block:51,value:2}));
-// memory.push(new Object({block:52,value:2}));
-// memory.push(new Object({block:53,value:2}));
-// memory.push(new Object({block:54,value:2}));
-// memory.push(new Object({block:55,value:2}));
-// memory.push(new Object({block:56,value:2}));
-// memory.push(new Object({block:57,value:2}));
-// memory.push(new Object({block:58,value:2}));
-// memory.push(new Object({block:59,value:2}));
-// memory.push(new Object({block:60,value:2}));
-// memory.push(new Object({block:61,value:2}));
-// memory.push(new Object({block:62,value:2}));
-// memory.push(new Object({block:63,value:2}));
-// memory.push(new Object({block:0,value:2}));
-// memory.push(new Object({block:1,value:2}));
-// memory.push(new Object({block:2,value:2}));
-// memory.push(new Object({block:3,value:2}));
-// memory.push(new Object({block:4,value:2}));
-// memory.push(new Object({block:5,value:2}));
-// memory.push(new Object({block:6,value:2}));
-// memory.push(new Object({block:7,value:2}));
-// memory.push(new Object({block:8,value:2}));
-// memory.push(new Object({block:9,value:2}));
-// memory.push(new Object({block:10,value:2}));
-// memory.push(new Object({block:11,value:2}));
-// memory.push(new Object({block:12,value:2}));
-// memory.push(new Object({block:13,value:2}));
-// memory.push(new Object({block:14,value:2}));
-// memory.push(new Object({block:15,value:2}));
-// memory.push(new Object({block:16,value:2}));
-// memory.push(new Object({block:17,value:2}));
-// memory.push(new Object({block:18,value:2}));
-// memory.push(new Object({block:19,value:2}));
-// memory.push(new Object({block:20,value:2}));
-// memory.push(new Object({block:21,value:2}));
-// memory.push(new Object({block:22,value:2}));
-// memory.push(new Object({block:23,value:2}));
-// memory.push(new Object({block:24,value:2}));
-// memory.push(new Object({block:25,value:2}));
-// memory.push(new Object({block:26,value:2}));
-// memory.push(new Object({block:27,value:2}));
-// memory.push(new Object({block:28,value:2}));
-// memory.push(new Object({block:29,value:2}));
-// memory.push(new Object({block:30,value:2}));
-// memory.push(new Object({block:31,value:2}));
-// memory.push(new Object({block:32,value:2}));
-// memory.push(new Object({block:33,value:2}));
-// memory.push(new Object({block:34,value:2}));
-// memory.push(new Object({block:35,value:2}));
-// memory.push(new Object({block:36,value:2}));
-// memory.push(new Object({block:37,value:2}));
-// memory.push(new Object({block:38,value:2}));
-// memory.push(new Object({block:39,value:2}));
-// memory.push(new Object({block:40,value:2}));
-// memory.push(new Object({block:41,value:2}));
-// memory.push(new Object({block:42,value:2}));
-// memory.push(new Object({block:43,value:2}));
-// memory.push(new Object({block:44,value:2}));
-// memory.push(new Object({block:45,value:2}));
-// memory.push(new Object({block:46,value:2}));
-// memory.push(new Object({block:47,value:2}));
-// memory.push(new Object({block:48,value:2}));
-// memory.push(new Object({block:49,value:2}));
-// memory.push(new Object({block:50,value:2}));
-// memory.push(new Object({block:51,value:2}));
-// memory.push(new Object({block:52,value:2}));
-// memory.push(new Object({block:53,value:2}));
-// memory.push(new Object({block:54,value:2}));
-// memory.push(new Object({block:55,value:2}));
-// memory.push(new Object({block:56,value:2}));
-// memory.push(new Object({block:57,value:2}));
-// memory.push(new Object({block:58,value:2}));
-// memory.push(new Object({block:59,value:2}));
-// memory.push(new Object({block:60,value:2}));
-// memory.push(new Object({block:61,value:2}));
-// memory.push(new Object({block:62,value:2}));
-// memory.push(new Object({block:63,value:2}));
-// memory.push(new Object({block:0,value:2}));
-// memory.push(new Object({block:1,value:2}));
-// memory.push(new Object({block:2,value:2}));
-// memory.push(new Object({block:3,value:2}));
-// memory.push(new Object({block:4,value:2}));
-// memory.push(new Object({block:5,value:2}));
-// memory.push(new Object({block:6,value:2}));
-// memory.push(new Object({block:7,value:2}));
-// memory.push(new Object({block:8,value:2}));
-// memory.push(new Object({block:9,value:2}));
-// memory.push(new Object({block:10,value:2}));
-// memory.push(new Object({block:11,value:2}));
-// memory.push(new Object({block:12,value:2}));
-// memory.push(new Object({block:13,value:2}));
-// memory.push(new Object({block:14,value:2}));
-// memory.push(new Object({block:15,value:2}));
-// memory.push(new Object({block:16,value:2}));
-// memory.push(new Object({block:17,value:2}));
-// memory.push(new Object({block:18,value:2}));
-// memory.push(new Object({block:19,value:2}));
-// memory.push(new Object({block:20,value:2}));
-// memory.push(new Object({block:21,value:2}));
-// memory.push(new Object({block:22,value:2}));
-// memory.push(new Object({block:23,value:2}));
-// memory.push(new Object({block:24,value:2}));
-// memory.push(new Object({block:25,value:2}));
-// memory.push(new Object({block:26,value:2}));
-// memory.push(new Object({block:27,value:2}));
-// memory.push(new Object({block:28,value:2}));
-// memory.push(new Object({block:29,value:2}));
-// memory.push(new Object({block:30,value:2}));
-// memory.push(new Object({block:31,value:2}));
-// memory.push(new Object({block:32,value:2}));
-// memory.push(new Object({block:33,value:2}));
-// memory.push(new Object({block:34,value:2}));
-// memory.push(new Object({block:35,value:2}));
-// memory.push(new Object({block:36,value:2}));
-// memory.push(new Object({block:37,value:2}));
-// memory.push(new Object({block:38,value:2}));
-// memory.push(new Object({block:39,value:2}));
-// memory.push(new Object({block:40,value:2}));
-// memory.push(new Object({block:41,value:2}));
-// memory.push(new Object({block:42,value:2}));
-// memory.push(new Object({block:43,value:2}));
-// memory.push(new Object({block:44,value:2}));
-// memory.push(new Object({block:45,value:2}));
-// memory.push(new Object({block:46,value:2}));
-// memory.push(new Object({block:47,value:2}));
-// memory.push(new Object({block:48,value:2}));
-// memory.push(new Object({block:49,value:2}));
-// memory.push(new Object({block:50,value:2}));
-// memory.push(new Object({block:51,value:2}));
-// memory.push(new Object({block:52,value:2}));
-// memory.push(new Object({block:53,value:2}));
-// memory.push(new Object({block:54,value:2}));
-// memory.push(new Object({block:55,value:2}));
-// memory.push(new Object({block:56,value:2}));
-// memory.push(new Object({block:57,value:2}));
-// memory.push(new Object({block:58,value:2}));
-// memory.push(new Object({block:59,value:2}));
-// memory.push(new Object({block:60,value:2}));
-// memory.push(new Object({block:61,value:2}));
-// memory.push(new Object({block:62,value:2}));
-// memory.push(new Object({block:63,value:2}));
+memory = new Array();
+cachebase;
 
 function init(){
-    const cache = new Array(8);
+    cache = new Array(8);
     cache[0] = new Array();
     cache[1] = new Array();
     cache[2] = new Array();
@@ -284,15 +29,35 @@ function init(){
     hitcount = 0;
     time = 0;
     memory = new Array();
+
 }
 
 function reset(){
     init();
     document.getElementById("input").style.display = "block";
     document.getElementById("memory-sequence").style.display = "none";
+    parent = document.getElementById("input").children[0];
+    parent.innerHTML = "<tr>"+
+                        "<th> Block </th>"+
+                        "</tr>"+
+                        "<tr>"+
+                        "<td> <input type='number' onkeydown='addtomemory(this)'> </td>"+
+                        "</tr>";
+    textlog = document.getElementById("memory-sequence").children[0];
+    textlog.innerHTML = "<tr>"+
+                            "<th> Sequence </th> <th> Status </th> <th> Set </th> <th> Time </th>"+
+                        "</tr>";
+    document.getElementById("cache").innerHTML = cachebase;
+    finalsnap = document.getElementById("final-snapshot");
+    finalsnap.style.display = "none";
+    finalsnap.innerHTML= "";
+    document.getElementById("start").disabled = false;
+    document.getElementById("time").innerHTML = time;
 }
 
 async function start(){
+    document.getElementById("start").disabled = true;
+    cachebase = document.getElementById("cache").innerHTML;
     textlog = document.getElementById("memory-sequence").children[0];
     document.getElementById("input").style.display = "none";
     document.getElementById("memory-sequence").style.display = "block";
@@ -315,7 +80,6 @@ async function start(){
         }else{
             if(cache[set].length<4){
                 cache[set].push(curr);
-                //console.log(document.getElementById("cache").children[0].children[set*2+1].children[cache[set].length]);
                 document.getElementById("cache").children[0].children[set*2+1].children[cache[set].length].innerHTML = curr.block;
                 document.getElementById("cache").children[0].children[set*2+2].children[cache[set].length].innerHTML = curr.age;
             }else{
@@ -357,8 +121,8 @@ async function start(){
                         "<p> Access Count: "+(hitcount+misscount)+" </p>"+
                         "<p> Hits: "+hitcount+"</p>"+
                         "<p> Misses: "+misscount+"</p>"+
-                        "<p> Average Memory Access Time: "+1+"</p>"+
-                        "<p> Total Memory Access Time: "+1+"</p>"+
+                        "<p> Average Memory Access Time: "+(325*misscount+misscount+hitcount)+"</p>"+
+                        "<p> Total Memory Access Time: "+time+"</p>"+
                         "<p> Hit Rate: "+(hitcount/(hitcount+misscount))+"</p>"+
                         "<p> Miss Rate: "+(misscount/(hitcount+misscount))+"</p>";
 }
@@ -373,7 +137,6 @@ function addtomemory(e){
             row = document.createElement("tr");
             col = document.createElement("td");
             col.innerHTML = "<input type='number' onkeydown='addtomemory(this)'>"
-            
             row.appendChild(col);
             parent = e.parentNode;
             parent.innerHTML = e.value;
