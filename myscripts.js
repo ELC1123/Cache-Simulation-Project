@@ -329,6 +329,7 @@ async function start(){
         console.log(JSON.stringify(cache));
     }
     finalsnap = document.getElementById("final-snapshot");
+    finalsnap.style.display = "block";
     finalsnap.innerHTML="<p> Final Snapshot </p>"+
                         "<p> Access Count: "+(hitcount+misscount)+" </p>"+
                         "<p> Hits: "+hitcount+"</p>"+
