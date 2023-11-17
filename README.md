@@ -59,7 +59,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 6 |    6    |    14    |    22    |    62    |
 | Set 7 |    7    |    15    |    23    |    63    |
 
-    With that said, the first iteration had 0 cache hits and 64 cache misses.
+    `**With that said, the first iteration had 0 cache hits and 64 cache misses.**`
 
     In the second iteration, we will insert MM Blocks 0 to 23 first, which will all result in hits since they are still in the cache. 
     However, when we try to insert 24, it results in a miss since 24 is no longer in the cache. 
@@ -93,7 +93,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
     Then when we try to insert MM Blocks 56 to 63, they will all result in hits because they are all still in the cache. 
     Thus, the snapshot above is the final snapshot for the second iteration.
-    With that said, the second iteration had 32 cache hits and 32 cache misses.
+    `**With that said, the second iteration had 32 cache hits and 32 cache misses.**`
 
     For the third iteration, we insert MM Blocks 0 to 15 first, which will all result in hits since they are still in the cache. 
     However, when we try to insert 16, it results in a miss since 16 is no longer in the cache. 
@@ -127,7 +127,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
     Then when we try to insert MM Blocks 48 to 63, they will all result in hits because they are all still in the cache. 
     Thus, the snapshot above is the final snapshot for the third iteration.
-    With that said, the third iteration had 32 cache hits and 32 cache misses.
+    `**With that said, the third iteration had 32 cache hits and 32 cache misses.**`
 
     For the last iteration, we insert MM Blocks 0 to 7 first, which will all result in hits since they are still in the cache. 
     However, when we try to insert 8, it results in a miss since 8 is no longer in the cache. 
@@ -161,7 +161,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
     Then when we try to insert MM Blocks 40 to 63, they will all result in hits because they are all still in the cache. 
     Thus, the snapshot above is the final snapshot of this test case.
-    With that said, the fourth iteration had 32 cache hits and 32 cache misses.
+    `**With that said, the fourth iteration had 32 cache hits and 32 cache misses.**`
 
     In total, the breakdown of the cache hits and misses are as follows:
 
