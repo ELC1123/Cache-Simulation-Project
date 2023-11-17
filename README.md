@@ -1,8 +1,8 @@
 # Cache-Simulation-Project
 CSARCH12 Group 6
-Chan, Ethan Lester L.
-Lu, Andre Giancarlo L.
-Teng, Adriel Shanlley T.
+Chan, Ethan Lester L. 
+Lu, Andre Giancarlo L. 
+Teng, Adriel Shanlley T. 
 
 Type of cache memory: 4-way BSA + MRU
 
@@ -12,7 +12,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 `a.) Sequential sequence: up to 2n cache block. Repeat the sequence four times. Example: 0,1,2,3,...,2n-1 {4x}`
 
     In this test case, we will be inputting 64 MM blocks into the cache, starting from 0 until 63. 
-    MM Blocks 0 to 31 will be mapped to their corresponding sets by calculating MM Block# % 8. 
+    Since the cache is empty, MM Blocks 0 to 31 will all miss and be mapped to their corresponding sets by calculating MM Block# % 8. 
     This will result in a mapping pattern wherein:
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
@@ -27,7 +27,8 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 7 |    7    |    15    |    23    |    31    |
 
     Now we will be inserting MM Blocks 32 to 63 in the cache. 
-    However, since it is currently full, we will have to make use of the MRU replacement algorithm. 
+    However, since it is currently full, and these blocks are not in the cache they will all miss.
+    This means we will have to make use of the MRU replacement algorithm. 
     To keep things simple, we will first observe Set 0 wherein we are attempting to insert 32. 
     Since Block 3 in Set 0 was the most recently used block, we will insert 32 into it. 
     The same goes for Set 1 wherein 33 will be inserted into Block 3 since that was the most recently used block in Set 1. 
@@ -57,6 +58,8 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 5 |    5    |    13    |    21    |    61    |
 | Set 6 |    6    |    14    |    22    |    62    |
 | Set 7 |    7    |    15    |    23    |    63    |
+
+    With that said, the first iteration had 0 cache hits and 64 cache misses.
 
     In the second iteration, we will insert MM Blocks 0 to 23 first, which will all result in hits since they are still in the cache. 
     However, when we try to insert 24, it results in a miss since 24 is no longer in the cache. 
@@ -90,6 +93,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
     Then when we try to insert MM Blocks 56 to 63, they will all result in hits because they are all still in the cache. 
     Thus, the snapshot above is the final snapshot for the second iteration.
+    With that said, the second iteration had 32 cache hits and 32 cache misses.
 
     For the third iteration, we insert MM Blocks 0 to 15 first, which will all result in hits since they are still in the cache. 
     However, when we try to insert 16, it results in a miss since 16 is no longer in the cache. 
@@ -123,6 +127,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
     Then when we try to insert MM Blocks 48 to 63, they will all result in hits because they are all still in the cache. 
     Thus, the snapshot above is the final snapshot for the third iteration.
+    With that said, the third iteration had 32 cache hits and 32 cache misses.
 
     For the last iteration, we insert MM Blocks 0 to 7 first, which will all result in hits since they are still in the cache. 
     However, when we try to insert 8, it results in a miss since 8 is no longer in the cache. 
@@ -156,8 +161,29 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
     Then when we try to insert MM Blocks 40 to 63, they will all result in hits because they are all still in the cache. 
     Thus, the snapshot above is the final snapshot of this test case.
+    With that said, the fourth iteration had 32 cache hits and 32 cache misses.
+
+    In total, the breakdown of the cache hits and misses are as follows:
+
+|       | Hits | Misses | 
+| :--------------: | :-------: | :-------: |
+| First iteration |    0    |    64    |
+| Second iteration |    32    |    32    |
+| Third iteration |    32    |    32    |
+| Fourth iteration |    32    |    32    |
+
+    Altogether, we have 32+32+32 = 96 cache hits and 64+32+32+32 = 160 cache misses.
     
 `b.) Random sequence: containing 4n blocks.`
+
+    In this test case, we will be inputting 128 MM Blocks into the cache. 
+    These blocks will be in a random sequence so to simplify the analysis, we will observe what happens in one set.
+    For each set, the first 4 MM Blocks that are mapped into them (using MM Block# % 8) will miss and occupy Block 0, 1, 2, and 3 of that set in sequential order.
+    From thereon, the next block that is mapped into that set will miss and since all the blocks of that set are already occupied, we will use the MRU replacement algorithm.
+    In all of these sets, Block 3 will be the most recently used block, so we will replace the data in this block with the next MM block that is mapped to it.
+    This will be the constant pattern throughout all the sets, wherein the data in Block 3 is consistently being replaced.
+    Thus, for this test case, we will have 0 cache hits and 128 cache misses.
+    
 
 `c.) Mid-repeat blocks: Start at block 0, repeat the sequence in the middle two times up to n-1 blocks, after which continue up to 2n. 
      Then, repeat the sequence four times. Example: if n=8, sequence=0, 1,2,3,4,5,6, 1,2,3,4,5,6, 7,8,9,10,11,12,13,14,15 {4x}`
