@@ -1,8 +1,8 @@
 # Cache-Simulation-Project
 CSARCH12 Group 6
-Chan, Ethan Lester L. 
-Lu, Andre Giancarlo L. 
-Teng, Adriel Shanlley T. 
+Chan, Ethan Lester L.  
+Lu, Andre Giancarlo L.  
+Teng, Adriel Shanlley T.  
 
 Type of cache memory: 4-way BSA + MRU
 
