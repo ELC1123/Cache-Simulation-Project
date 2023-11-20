@@ -11,6 +11,14 @@ input{
     border-color: transparent;
 }
 
+#input table tr td input{
+    width: 100%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+}
+
 table{
     border: 1px solid white;
     border-collapse: collapse;
