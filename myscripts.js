@@ -41,7 +41,7 @@ function reset(){
     document.getElementById("memory-sequence").style.display = "none";
     parent = document.getElementById("input").children[0];
     parent.innerHTML = "<tr>"+
-                        "<th> Block </th>"+
+                        "<th> Custom Block Sequence Input </th>"+
                         "</tr>"+
                         "<tr>"+
                         "<td> <input type='number' onkeydown='addtomemory(this)'> </td>"+
