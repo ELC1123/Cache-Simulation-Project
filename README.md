@@ -239,7 +239,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 7 |    7    |    15    |    23    |    63    |
 
     The second iteration will then follow. First, MM blocks 0 to 23 will all be hits, only changing the age of the cache block. 
-    Then, MM blocks 24 to 30 will be inserted. These blocks will result in misses. Therefore they will replace Sets 0 to 6 in Block 2.
+    Then, MM blocks 24 to 30 will be inserted. These blocks will result in misses. Therefore they will replace Block 2 in Sets 0 to 6.
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
@@ -253,7 +253,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 7 |    7    |    15    |    23    |    63    |
 
     Then, MM blocks 1 to 15 will be inserted and will all result in hits, so only the age of the cache block will change. 
-    Then, MM blocks 16 to 22 will be inserted and will all result in misses, replacing the most recently used cache blocks in Set 0 to 6 of Block 1.
+    Then, MM blocks 16 to 22 will be inserted and will all result in misses, replacing Block 1 in Sets 0 to 6.
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
@@ -283,7 +283,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 7 |    7    |    15    |    55    |    63    |
 
     Next, the third iteration starts by inserting MM blocks 0 to 7 which will all result in hits. 
-    Then, MM blocks 8 to 14 will then be inserted. Since all of these blocks will result in misses, the cache blocks of Sets 0 to 6 in Block 0 will be replaced.
+    Then, MM blocks 8 to 14 will then be inserted. Since all of these blocks will result in misses, the cache blocks in Sets 0 to 6 of Block 0 will be replaced.
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
@@ -297,7 +297,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 7 |    7    |    15    |    55    |    63    |
 
     Then, MM blocks 15 to 22 will be inserted and will all result in hits. 
-    This is followed by inserting MM blocks 23 to 30 and then 1 to 6, which will all result in misses and will replace the cache blocks of Sets 1 to 6 in Block 1.
+    This is followed by inserting MM blocks 23 to 30 and then 1 to 6, which will all result in misses and will replace the cache blocks of Block 1 in Sets 1 to 6.
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
@@ -325,7 +325,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 7 |    15    |    23    |    55    |    63    |
 
     This is followed by inserting MM blocks 23 and 24 which will result in hits. 
-    After, MM blocks 25 to 47 will be inserted. This will all result in misses, which will replace Set 0 and Set 7 in Block 1 and Sets 1 to 6 in Block 0. 
+    After, MM blocks 25 to 47 will be inserted. This will all result in misses, which will replace the cache blocks of Block 1 in Sets 0 and 7 and Block 0 in Sets 1 to 6. 
     Lastly, MM blocks 48 to 63 will be inserted and will all result in hits. This ends the third iteration.
     **With that said, the third iteration had 42 cache hits and 52 cache misses.**
 
@@ -341,7 +341,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 7 |    15    |    47    |    55    |    63    |
 
     Lastly, we move on to the final iteration. 
-    First, block 0 will be inserted. Since this is a miss, it will replace Set 0 of Block 3 since this is the most recently used block. 
+    First, block 0 will be inserted. Since this is a miss, it will replace the cache block of Block 3 in Set 0 since this is the most recently used block. 
     Then, blocks 1 to 6 will be inserted, which will all result in misses and will now be the most recently used cache blocks. 
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
@@ -370,7 +370,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 7 |    15    |    47    |    55    |    7    |
 
     Blocks 17 to 30 will then be inserted, followed by blocks 1 to 6. These will all result in misses and will replace the cache blocks of Set 0 and Set 7 of Block 0 and Sets 1 to 6 of Block 1. 
-    This is then followed by inserting blocks 7 and 8, which will result in hits. This also makes Sets 0 and 7 of Block 3 the most recently used cache blocks. 
+    This is then followed by inserting blocks 7 and 8, which will result in hits. This also makes the cache blocks of Block 3 in Sets 0 and 7 the most recently used cache blocks. 
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
@@ -383,8 +383,8 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 6 |    46    |    6    |    54    |    62    |
 | Set 7 |    23    |    47    |    55    |    7    |
 
-    Next, Blocks 9 to 22 will be inserted, which will all result in misses, thus replacing the cache blocks of Set 0 and Set 7 of Block 3 and Sets 1 to 6 of Block 1. 
-    This is followed by MM blocks 23 and 24, which will result in hits. This also makes Set 0 and 7 of Block 0 the most recently used cache blocks.
+    Next, Blocks 9 to 22 will be inserted, which will all result in misses, thus replacing the cache blocks of Block 3 in Sets 0 and 7 and Block 1 in Sets 1 to 6. 
+    This is followed by MM blocks 23 and 24, which will result in hits. This also makes Block 0 in Sets 0 and 7 the most recently used cache blocks.
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
@@ -397,7 +397,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 6 |    46    |    22    |    54    |    62    |
 | Set 7 |    23    |    47    |    55    |    15    |
 
-    Next, MM blocks 25 to 39 will be inserted. These will all result in misses and will replace the cache blocks Set 0 and Set 7 of Block 0 and Sets 1 to 6 of Block 1. 
+    Next, MM blocks 25 to 39 will be inserted. These will all result in misses and will replace the cache blocks of Block 0 in Sets 0 and 7 and Block 1 in Sets 1 to 6. 
     This is then followed by MM blocks 40 to 54, which will all result in hits. The most recently used blocks are now at Sets 0 to 7 of Block 2.
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
@@ -411,9 +411,9 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 6 |    46    |    38    |    54    |    62    |
 | Set 7 |    39    |    47    |    55    |    15    |
 
-    MM block 56 will then be inserted and will replace Set 0 of Block 2 since this is a miss. 
+    MM block 56 will then be inserted and will replace Block 2 of Set 0 since this is a miss. 
     This is followed by MM blocks 57 to 62, which will all result in hits. 
-    Lastly, MM block 63 will be inserted and will replace Set 7 of Block 2 since this is a miss. 
+    Lastly, MM block 63 will be inserted and will replace Block 2 of Set 7 since this is a miss. 
     This ends the final iteration and concludes the test case. The final snapshot of the cache map can be seen below.
     **With that said, the fourth iteration had 34 cache hits and 60 cache misses.**
 
