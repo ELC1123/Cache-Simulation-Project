@@ -7,6 +7,8 @@ Teng, Adriel Shanlley T.
 
 Type of cache memory: 4-way BSA + MRU
 
+Website Link: https://cache-simulation.onrender.com/index.html
+
 Detailed analysis of test cases:
 Since our cache contains 32 blocks and the set size is 4 blocks per set, we have 32/4 = 8 sets.
 
