@@ -63,6 +63,7 @@ async function start(){
     textlog = document.getElementById("memory-sequence").children[0];
     document.getElementById("input").style.display = "none";
     document.getElementById("memory-sequence").style.display = "block";
+    log = "";
     while(memory.length !=0){
         delay = document.getElementById("speed").value;
         curr = memory.shift();
@@ -114,6 +115,11 @@ async function start(){
         row.appendChild(setdisplay);
         row.appendChild(timedisplay);
         textlog.appendChild(row);
+        if(stat.classList.contains("green")){
+            log = log + "Block: "+curr.block+" Status: Hit Set: "+set+" Time: "+time+"\n";
+        }else{
+            log = log + "Block: "+curr.block+" Status: Miss Set: "+set+" Time: "+time+"\n";
+        }
         await sleep(delay); 
         console.log(JSON.stringify(cache));
     }
@@ -126,7 +132,17 @@ async function start(){
                         "<p> Average Memory Access Time: "+(325*misscount+misscount+hitcount)+"</p>"+
                         "<p> Total Memory Access Time: "+time+"</p>"+
                         "<p> Hit Rate: "+(hitcount/(hitcount+misscount))+"</p>"+
-                        "<p> Miss Rate: "+(misscount/(hitcount+misscount))+"</p>";
+                        "<p> Miss Rate: "+(misscount/(hitcount+misscount))+"</p>"+
+                        "<button onclick='download()'><a id='download'></a><a>Download Text Log</a></button>";
+
+    link = document.getElementById("download");
+    const file = new Blob([log], { type: 'text/plain' });
+    link.href = URL.createObjectURL(file);
+    link.download = "Text Log.txt";
+}
+function download(){
+    link = document.getElementById("download");
+    link.click();
 }
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
