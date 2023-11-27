@@ -225,7 +225,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
       Then, since the cache simulation is following a most recently used replacement algorithm, the blocks will be repeatedly inserted into Block 3 since that is the block that contains the most recently used cache blocks. 
       This ends the first iteration.
-    **With that said, the first iteration had 30 cache hits and 64 cache misses.**
+  **With that said, the first iteration had 30 cache hits and 64 cache misses.**
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
