@@ -96,7 +96,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
     Then when we try to insert MM Blocks 56 to 63, they will all result in hits because they are all still in the cache. 
     Thus, the snapshot above is the final snapshot for the second iteration.
-    **With that said, the second iteration had 32 cache hits and 32 cache misses.**
+  **With that said, the second iteration had 32 cache hits and 32 cache misses.**
 
     For the third iteration, we insert MM Blocks 0 to 15 first, which will all result in hits since they are still in the cache. 
     However, when we try to insert 16, it results in a miss since 16 is no longer in the cache. 
@@ -130,7 +130,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
     Then when we try to insert MM Blocks 48 to 63, they will all result in hits because they are all still in the cache. 
     Thus, the snapshot above is the final snapshot for the third iteration.
-    **With that said, the third iteration had 32 cache hits and 32 cache misses.**
+  **With that said, the third iteration had 32 cache hits and 32 cache misses.**
 
     For the last iteration, we insert MM Blocks 0 to 7 first, which will all result in hits since they are still in the cache. 
     However, when we try to insert 8, it results in a miss since 8 is no longer in the cache. 
@@ -164,7 +164,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
     Then when we try to insert MM Blocks 40 to 63, they will all result in hits because they are all still in the cache. 
     Thus, the snapshot above is the final snapshot of this test case.
-    **With that said, the fourth iteration had 32 cache hits and 32 cache misses.**
+  **With that said, the fourth iteration had 32 cache hits and 32 cache misses.**
 
     In total, the breakdown of the cache hits and misses are as follows:
 
@@ -175,7 +175,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Third iteration |    32    |    32    |
 | Fourth iteration |    32    |    32    |
 
-    Altogether, we have 32+32+32 = 96 cache hits and 64+32+32+32 = 160 cache misses.
+  **Altogether, we have 32+32+32 = 96 cache hits and 64+32+32+32 = 160 cache misses.**
     
 `b.) Random sequence: containing 4n blocks.`
 
@@ -185,7 +185,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
     From thereon, the next block that is mapped into that set will miss and since all the blocks of that set are already occupied, we will use the MRU replacement algorithm.
     In all of these sets, Block 3 will be the most recently used block, so we will replace the data in this block with the next MM block that is mapped to it.
     This will be the constant pattern throughout all the sets, wherein the data in Block 3 is consistently being replaced.
-    Thus, for this test case, we will have 0 cache hits and 128 cache misses.
+  **Thus, for this test case, we will have 0 cache hits and 128 cache misses.**
     
 
 `c.) Mid-repeat blocks: Start at block 0, repeat the sequence in the middle two times up to n-1 blocks, after which continue up to 2n. 
@@ -225,7 +225,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 
       Then, since the cache simulation is following a most recently used replacement algorithm, the blocks will be repeatedly inserted into Block 3 since that is the block that contains the most recently used cache blocks. 
       This ends the first iteration.
-      **With that said, the first iteration had 30 cache hits and 64 cache misses.**
+    **With that said, the first iteration had 30 cache hits and 64 cache misses.**
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
@@ -269,7 +269,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
     Next, MM blocks 23 to 30 will be inserted and will all result in hits, only changing the age of the cache block. 
     This is followed by inserting MM blocks 31 to 55 which will all result in misses, therefore changing the most recently used cache blocks which are all in block 2. 
     Lastly, MM blocks 56 to 63 will be inserted, which will all result in hits, thus ending the second iteration.
-    **With that said, the second iteration had 55 cache hits and 39 cache misses.**
+  **With that said, the second iteration had 55 cache hits and 39 cache misses.**
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
@@ -327,7 +327,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
     This is followed by inserting MM blocks 23 and 24 which will result in hits. 
     After, MM blocks 25 to 47 will be inserted. This will all result in misses, which will replace the cache blocks of Block 1 in Sets 0 and 7 and Block 0 in Sets 1 to 6. 
     Lastly, MM blocks 48 to 63 will be inserted and will all result in hits. This ends the third iteration.
-    **With that said, the third iteration had 42 cache hits and 52 cache misses.**
+  **With that said, the third iteration had 42 cache hits and 52 cache misses.**
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
@@ -415,7 +415,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
     This is followed by MM blocks 57 to 62, which will all result in hits. 
     Lastly, MM block 63 will be inserted and will replace Block 2 of Set 7 since this is a miss. 
     This ends the final iteration and concludes the test case. The final snapshot of the cache map can be seen below.
-    **With that said, the fourth iteration had 34 cache hits and 60 cache misses.**
+  **With that said, the fourth iteration had 34 cache hits and 60 cache misses.**
 
 |       | Block 0 | Block 1 | Block 2 | Block 3 |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
@@ -437,4 +437,4 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Third iteration |    42    |    52    |
 | Fourth iteration |    34    |    60    |
 
-    Altogether, we have 30+55+42+34 = 161 cache hits and 64+39+52+60 = 215 cache misses.
+  **Altogether, we have 30+55+42+34 = 161 cache hits and 64+39+52+60 = 215 cache misses.**
