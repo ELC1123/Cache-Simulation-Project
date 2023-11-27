@@ -129,7 +129,7 @@ async function start(){
                         "<p> Access Count: "+(hitcount+misscount)+" </p>"+
                         "<p> Hits: "+hitcount+"</p>"+
                         "<p> Misses: "+misscount+"</p>"+
-                        "<p> Average Memory Access Time: "+(325*misscount+misscount+hitcount)+"</p>"+
+                        "<p> Average Memory Access Time: "+(hitcount/(hitcount+misscount) + (misscount/(hitcount+misscount))*326 )+"</p>"+
                         "<p> Total Memory Access Time: "+time+"</p>"+
                         "<p> Hit Rate: "+(hitcount/(hitcount+misscount))+"</p>"+
                         "<p> Miss Rate: "+(misscount/(hitcount+misscount))+"</p>"+
