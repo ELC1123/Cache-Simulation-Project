@@ -62,7 +62,7 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Set 6 |    6    |    14    |    22    |    62    |
 | Set 7 |    7    |    15    |    23    |    63    |
 
-    **With that said, the first iteration had 0 cache hits and 64 cache misses.**
+    __With that said, the first iteration had 0 cache hits and 64 cache misses.__
 
     In the second iteration, we will insert MM Blocks 0 to 23 first, which will all result in hits since they are still in the cache. 
     However, when we try to insert 24, it results in a miss since 24 is no longer in the cache. 
