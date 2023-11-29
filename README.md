@@ -195,7 +195,7 @@ Furthermore, our miss penalty (L/T) is 1 + (10ns + 640ns)/2 which is 326ns.
     
   **Thus, for this test case, we will have 0 cache hits and 128 cache misses.**
   
-    `From this, we have a hit rate of 0/128 and a miss rate of 128/128.`
+    From this, we have a hit rate of 0/128 and a miss rate of 128/128.
     
   **For the average access time, we have: (0/128) * 1ns + (128/128) * 326ns = 326ns**
   
@@ -453,7 +453,7 @@ Furthermore, our miss penalty (L/T) is 1 + (10ns + 640ns)/2 which is 326ns.
 
   **Altogether, we have 30+55+42+34 = 161 cache hits and 64+39+52+60 = 215 cache misses.**
   
-    `From this, we have a hit rate of 161/376 and a miss rate of 215/376.`
+    From this, we have a hit rate of 161/376 and a miss rate of 215/376.
     
   **For the average access time, we have: (161/376) * 1ns + (215/376) * 326ns = 186.84ns**
   
