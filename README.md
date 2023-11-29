@@ -11,6 +11,7 @@ Website Link: https://cache-simulation.onrender.com/index.html
 
 Detailed analysis of test cases:
 Since our cache contains 32 blocks and the set size is 4 blocks per set, we have 32/4 = 8 sets.
+Furthermore, our miss penalty (L/T) is 1 + (10ns + 640ns)/2 which is 326ns.
 
 `a.) Sequential sequence: up to 2n cache block. Repeat the sequence four times. Example: 0,1,2,3,...,2n-1 {4x}`
 
@@ -176,6 +177,9 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Fourth iteration |    32    |    32    |
 
   **Altogether, we have 32+32+32 = 96 cache hits and 64+32+32+32 = 160 cache misses.**
+  From this, we have a hit rate of 96/256 and a miss rate of 160/256.
+  **For the average access time, we have: (96/256) * 1ns + (160/256) * 326ns = 204.125ns**
+  **For the total access time, we have: 96 hits * 64 words per block * 1ns + 160 misses * (64 words per block * 10ns + 1ns) = 108,704ns**
     
 `b.) Random sequence: containing 4n blocks.`
 
@@ -186,6 +190,9 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
     In all of these sets, Block 3 will be the most recently used block, so we will replace the data in this block with the next MM block that is mapped to it.
     This will be the constant pattern throughout all the sets, wherein the data in Block 3 is consistently being replaced.
   **Thus, for this test case, we will have 0 cache hits and 128 cache misses.**
+  From this, we have a hit rate of 0/128 and a miss rate of 128/128.
+  **For the average access time, we have: (0/128) * 1ns + (128/128) * 326ns = 326ns**
+  **For the total access time, we have: 0 hits * 64 words per block * 1ns + 128 misses * (64 words per block * 10ns + 1ns) = 82,048ns**
     
 
 `c.) Mid-repeat blocks: Start at block 0, repeat the sequence in the middle two times up to n-1 blocks, after which continue up to 2n. 
@@ -438,3 +445,6 @@ Since our cache contains 32 blocks and the set size is 4 blocks per set, we have
 | Fourth iteration |    34    |    60    |
 
   **Altogether, we have 30+55+42+34 = 161 cache hits and 64+39+52+60 = 215 cache misses.**
+  From this, we have a hit rate of 161/376 and a miss rate of 215/376.
+  **For the average access time, we have: (161/376) * 1ns + (215/376) * 326ns = 186.84ns**
+  **For the total access time, we have: 161 hits * 64 words per block * 1ns + 215 misses * (64 words per block * 10ns + 1ns) = 148,119ns**
