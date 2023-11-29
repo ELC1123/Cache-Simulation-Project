@@ -72,14 +72,16 @@ async function start(){
         age[set]++;
         
         index = cache[set].findIndex(e => e.block === curr.block);
-        time++;
-        document.getElementById("time").innerHTML = time;
+        //time++;
+        //document.getElementById("time").innerHTML = time;
         if (index != -1){
             cache[set][index].age = curr.age;
             document.getElementById("cache").children[0].children[set*2+2].children[index+1].innerHTML = curr.age;
             stat = document.createElement("td")
             stat.classList.add("green");
             hitcount++;
+            time = time + 64;
+            document.getElementById("time").innerHTML = time;
         }else{
             if(cache[set].length<4){
                 cache[set].push(curr);
@@ -100,7 +102,7 @@ async function start(){
             stat = document.createElement("td");
             stat.classList.add("red");
             misscount++;
-            time = time + 640;
+            time = time + 641;
             document.getElementById("time").innerHTML = time;
         }
         row = document.createElement("tr");
